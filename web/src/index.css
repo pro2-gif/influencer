@@ -1,0 +1,252 @@
+:root {
+  --bg-color: #fdfbf7; /* 연베이지 화이트 */
+  --bg-gradient: linear-gradient(135deg, #fdfbf7 0%, #f3ede2 100%);
+  --text-primary: #111827; /* 거의 블랙에 가까운 짙은 회색 */
+  --text-secondary: #4b5563; /* 부드러운 그레이 */
+  --accent-color: #f59e0b; /* 따뜻하고 부드러운 앰버/오렌지 색상 */
+  --accent-gradient: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.8);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  background: var(--bg-gradient);
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Glassmorphism Card Utilities */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 40px rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(255, 255, 255, 1);
+}
+
+/* Typography Utilities */
+.text-gradient {
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-down {
+  animation: fadeInDown 0.8s ease-out forwards;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+/* Layout */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Top Section (Hero + Revenue) */
+.hero-section {
+  padding: 4rem 0;
+  margin-bottom: 2rem;
+}
+
+.top-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+  width: 100%;
+}
+
+/* 캡처 이미지 (최상단) */
+.capture-col {
+  flex: 1.3;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-title {
+  font-size: 2rem; /* 기존 1.5rem에서 더 크게 변경 */
+  font-weight: 700; /* 더 또렷하게 보이기 위해 굵기 조정 */
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+  text-align: center;
+  letter-spacing: -0.02em;
+}
+
+.capture-img-wrap {
+  width: 100%;
+  max-width: 650px;
+  border-radius: 8px; /* 더 각진 심플한 느낌 */
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.02);
+  background: transparent;
+}
+
+.capture-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 오른쪽 텍스트 및 표 (이제 상단) */
+.info-col {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 가운데 정렬 */
+  padding-top: 1rem;
+}
+
+.info-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style: none;
+  font-size: 1.15rem;
+  line-height: 2.2;
+  margin-bottom: 2.5rem;
+  color: var(--text-primary);
+  font-weight: 400; /* 심플하고 가볍게 */
+  letter-spacing: -0.01em;
+}
+
+.info-list li {
+  position: relative;
+  padding-left: 0; /* 중앙 정렬을 위해 왼쪽 패딩 제거 */
+}
+
+.info-list li::before {
+  display: none; /* 불릿 기호 제거 */
+}
+
+.revenue-table {
+  width: 100%;
+  max-width: 400px;
+  border-collapse: collapse;
+  background: transparent;
+}
+
+.revenue-table th {
+  padding: 0.8rem 1rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.revenue-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+  font-size: 1.05rem;
+  color: var(--text-primary);
+  font-weight: 400;
+}
+
+.revenue-table th:last-child,
+.revenue-table td:last-child {
+  text-align: right;
+}
+
+.revenue-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Masonry Gallery */
+.gallery-section {
+  margin-bottom: 4rem;
+}
+
+.gallery-title {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.masonry-grid {
+  column-count: 1;
+  column-gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .masonry-grid {
+    column-count: 2;
+  }
+}
+
+@media (min-width: 1024px) {
+  .masonry-grid {
+    column-count: 3;
+  }
+}
+
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 1.5rem;
+}
+
+.masonry-item img {
+  width: 100%;
+  border-radius: 16px;
+  display: block;
+  transition: transform 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.masonry-item:hover img {
+  transform: scale(1.02);
+  border-color: rgba(0, 0, 0, 0.1);
+}
