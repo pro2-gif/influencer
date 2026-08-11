@@ -123,6 +123,14 @@ body {
   letter-spacing: -0.02em;
 }
 
+/* 스마트폰(모바일) 화면에서 제목 크기 자동 축소 및 한 줄 고정 */
+@media (max-width: 600px) {
+  .section-title {
+    font-size: 1.3rem;
+    white-space: nowrap; /* 강제로 한 줄로 만듦 */
+  }
+}
+
 .capture-img-wrap {
   width: 100%;
   max-width: 650px;
