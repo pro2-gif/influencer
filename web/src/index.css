@@ -148,65 +148,73 @@ body {
   padding-top: 1rem;
 }
 
-.info-list {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  list-style: none;
-  font-size: 1.15rem;
-  line-height: 2.2;
-  margin-bottom: 2.5rem;
+.info-text-group {
+  text-align: center;
+  margin-bottom: 3rem; /* 카드 영역과의 간격 */
+}
+
+.info-title {
+  font-size: 1.25rem;
+  font-weight: 500;
   color: var(--text-primary);
-  font-weight: 400; /* 심플하고 가볍게 */
+  margin-bottom: 1rem;
   letter-spacing: -0.01em;
 }
 
-.info-list li {
-  position: relative;
-  padding-left: 0; /* 중앙 정렬을 위해 왼쪽 패딩 제거 */
-}
-
-.info-list li::before {
-  display: none; /* 불릿 기호 제거 */
-}
-
-.revenue-table {
+.revenue-section {
   width: 100%;
-  max-width: 400px;
-  border-collapse: collapse;
-  background: transparent;
+  max-width: 480px;
+  margin: 0 auto;
 }
 
-.revenue-table th {
-  padding: 0.8rem 1rem;
-  font-weight: 500;
-  color: var(--text-secondary);
-  border-bottom: 1px solid rgba(0,0,0,0.06);
-  text-align: left;
-  font-size: 0.95rem;
+.revenue-title {
+  font-size: 2rem; /* 훨씬 크게 */
+  color: var(--text-primary); /* 진한 색상으로 변경 */
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 700; /* 더 굵게 */
+  letter-spacing: -0.02em;
 }
 
-.revenue-table td {
-  padding: 1rem;
-  text-align: left;
-  border-bottom: 1px solid rgba(0,0,0,0.04);
+.revenue-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* 카드 사이 간격 */
+}
+
+.revenue-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 1.8rem;
+  background: #ffffff; /* 깔끔한 흰색 카드 */
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.02); /* 매우 부드러운 그림자 */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.revenue-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.04);
+}
+
+.revenue-card .period {
   font-size: 1.05rem;
-  color: var(--text-primary);
+  color: var(--text-secondary);
   font-weight: 400;
 }
 
-.revenue-table th:last-child,
-.revenue-table td:last-child {
-  text-align: right;
-}
-
-.revenue-table tbody tr:last-child td {
-  border-bottom: none;
+.revenue-card .amount {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
 }
 
 /* Masonry Gallery */
 .gallery-section {
-  margin-bottom: 4rem;
+  padding: 4rem 0;
 }
 
 .gallery-title {

@@ -15,30 +15,23 @@ function HeroSection() {
 
         {/* 하단: 정보 텍스트 및 표 */}
         <div className="info-col">
-          <ul className="info-list">
-            <li>@supermom_yaksa</li>
-            <li>팔로워 17.6만</li>
-            <li>26년도 공구</li>
-          </ul>
+          <div className="info-text-group">
+            <p className="info-title">@supermom_yaksa &nbsp;&nbsp;|&nbsp;&nbsp; 팔로워 17.6만</p>
+          </div>
           
-          <table className="revenue-table">
-            <thead>
-              <tr>
-                <th>기간</th>
-                <th>매출액</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>26년도 2차(약 2주)</td>
-                <td>73,164,600원</td>
-              </tr>
-              <tr>
-                <td>26년도 1차(약 2주)</td>
-                <td>98,408,000원</td>
-              </tr>
-            </tbody>
-          </table>
+          <div className="revenue-section">
+            <h3 className="revenue-title">26년도 공구</h3>
+            <div className="revenue-list">
+              <div className="revenue-card">
+                <span className="period">26년도 2차(약 2주)</span>
+                <span className="amount">73,164,600원</span>
+              </div>
+              <div className="revenue-card">
+                <span className="period">26년도 1차(약 2주)</span>
+                <span className="amount">98,408,000원</span>
+              </div>
+            </div>
+          </div>
         </div>
 
       </div>
