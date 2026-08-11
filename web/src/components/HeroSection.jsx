@@ -7,7 +7,10 @@ function HeroSection() {
         
         {/* 상단: 인스타그램 캡처본 (새로운 제목 추가) */}
         <div className="capture-col">
-          <h2 className="section-title">17만 팔로워가 신뢰하는 약사 인플루언서</h2>
+          <h2 className="section-title">
+            17만 팔로워가 신뢰하는<br />
+            약사 인플루언서
+          </h2>
           <div className="capture-img-wrap">
             <img src="/images/capture_profile.png" alt="Profile Capture" className="capture-img" />
           </div>
